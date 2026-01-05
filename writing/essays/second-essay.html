@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another Thoughtful Piece – Luca Nardinocchi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="../../about.html">About</a>
+            <a href="../../writing.html">Writing</a>
+            <a href="https://substack.com/@yoursubstack" target="_blank" rel="noopener">Substack</a>
+        </div>
+        <a href="../../index.html" class="nav-home" aria-label="Home">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </nav>
+
+    <article class="essay">
+        <a href="../essays.html" class="back">Essays</a>
+        <h1>Another Thoughtful Piece</h1>
+        <span class="essay-date">December 2025</span>
+        
+        <p>
+            Your essay content goes here.
+        </p>
+    </article>
+
+    <script>
+        // Nav fades when idle
+        let idleTimer;
+        const nav = document.querySelector('.nav');
+        
+        function resetIdle() {
+            nav.classList.remove('nav-idle');
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(() => nav.classList.add('nav-idle'), 3000);
+        }
+        
+        document.addEventListener('mousemove', resetIdle);
+        document.addEventListener('scroll', resetIdle);
+        resetIdle();
+    </script>
+</body>
+</html>

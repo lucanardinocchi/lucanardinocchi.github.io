@@ -183,10 +183,7 @@ a {
 }
 
 .think-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 2rem;
+    padding: 0;
 }
 
 .think-card h3 {
@@ -273,10 +270,8 @@ a {
 
 .ship-aside {
     margin-top: 3rem;
-    padding: 1.5rem 2rem;
+    padding-left: 1.5rem;
     border-left: 2px solid var(--accent);
-    background: rgba(200, 169, 110, 0.04);
-    border-radius: 0 6px 6px 0;
 }
 
 .ship-aside p {
@@ -317,23 +312,24 @@ a {
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0;
     margin-bottom: 3rem;
 }
 
 .project-card {
     display: block;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 1.75rem 2rem;
-    transition: background 0.25s ease, border-color 0.25s ease;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--card-border);
     position: relative;
+    transition: border-color 0.25s ease;
+}
+
+.project-card:first-child {
+    border-top: 1px solid var(--card-border);
 }
 
 .project-card:hover {
-    background: var(--card-hover);
-    border-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .project-title {
@@ -353,7 +349,7 @@ a {
 
 .project-arrow {
     position: absolute;
-    right: 2rem;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.1rem;
@@ -840,7 +836,7 @@ a {
     }
 
     .think-card {
-        padding: 1.5rem;
+        padding: 0;
     }
 
     .timeline {
@@ -852,11 +848,11 @@ a {
     }
 
     .project-card {
-        padding: 1.5rem;
+        padding: 1.25rem 0;
     }
 
     .project-arrow {
-        right: 1.5rem;
+        right: 0;
     }
 
     .nav {

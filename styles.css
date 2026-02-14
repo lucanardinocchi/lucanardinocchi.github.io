@@ -309,6 +309,13 @@ a {
 /* ============================
    Section 6: Work
    ============================ */
+.work-intro {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: 1fr;

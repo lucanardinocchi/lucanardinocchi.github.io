@@ -1,11 +1,25 @@
+/* ============================
+   Design Tokens
+   ============================ */
 :root {
-    --black: #1a1a1a;
-    --gray: #888;
-    --light-gray: #e0e0e0;
-    --white: #fff;
+    --bg: #0a0a0a;
+    --text: #f0ede8;
+    --text-dim: #8a8780;
+    --text-faint: #5a5955;
+    --accent: #c8a96e;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-hover: rgba(255, 255, 255, 0.08);
+    --font-serif: 'EB Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 720px;
+    --section-pad: 6rem 2rem;
 }
 
-* {
+/* ============================
+   Reset
+   ============================ */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,18 +27,508 @@
 
 html {
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'EB Garamond', Georgia, serif;
-    background: var(--white);
-    color: var(--black);
+    font-family: var(--font-serif);
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-/* Navigation */
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================
+   Background Animation Layer
+   ============================ */
+#bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ============================
+   Sections — Base
+   ============================ */
+.section {
+    position: relative;
+    z-index: 1;
+}
+
+.section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--section-pad);
+}
+
+/* ============================
+   Section 1: Hero
+   ============================ */
+.section-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-arrow {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: var(--text-dim);
+    position: relative;
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid var(--text-dim);
+    border-bottom: 1px solid var(--text-dim);
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(8px); }
+}
+
+/* ============================
+   Section 2: The Journey
+   ============================ */
+.section-journey {
+    padding: 4rem 0;
+}
+
+.section-journey .section-inner {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.narrative-line {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--text);
+    max-width: 600px;
+}
+
+.narrative-line + .narrative-line {
+    margin-top: 2.5rem;
+    color: var(--text-dim);
+    font-size: 1.5rem;
+}
+
+/* ============================
+   Section 3: How I Think
+   ============================ */
+.section-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-faint);
+    margin-bottom: 3rem;
+}
+
+.think-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.think-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.think-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.think-card p {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+}
+
+.think-footnote {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+/* ============================
+   Section 4: What I Ship
+   ============================ */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--card-border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.45rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--text-faint);
+    border: 2px solid var(--bg);
+    z-index: 1;
+}
+
+.timeline-marker-current {
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(200, 169, 110, 0.3);
+}
+
+.timeline-role {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+}
+
+.timeline-detail {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.ship-aside {
+    margin-top: 3rem;
+    padding: 1.5rem 2rem;
+    border-left: 2px solid var(--accent);
+    background: rgba(200, 169, 110, 0.04);
+    border-radius: 0 6px 6px 0;
+}
+
+.ship-aside p {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+/* ============================
+   Section 5: What I Want
+   ============================ */
+.conviction-block {
+    max-width: 580px;
+}
+
+.conviction-line {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.conviction-line:last-child {
+    margin-bottom: 0;
+}
+
+.conviction-line-strong {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* ============================
+   Section 6: Work
+   ============================ */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    background: var(--card-hover);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.project-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+
+.project-desc {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+}
+
+.project-arrow {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: var(--text-faint);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover .project-arrow {
+    color: var(--accent);
+    transform: translateY(-50%) translateX(4px);
+}
+
+/* Work links row */
+.work-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.work-link {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.work-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--text-faint);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.work-link:hover {
+    color: var(--text);
+}
+
+.work-link:hover::after {
+    background: var(--accent);
+}
+
+/* ============================
+   Section 7: Contact
+   ============================ */
+.section-contact {
+    padding-bottom: 8rem;
+}
+
+.contact-line {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    max-width: 480px;
+}
+
+.contact-email {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.contact-email::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.contact-email:hover {
+    color: var(--accent);
+}
+
+.contact-email:hover::after {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+/* ============================
+   Scroll Reveal Animations
+   ============================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+.reveal-delay-1 {
+    transition-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.45s;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    :root {
+        --section-pad: 4rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .narrative-line {
+        font-size: 1.5rem;
+    }
+
+    .narrative-line + .narrative-line {
+        font-size: 1.25rem;
+    }
+
+    .think-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conviction-line {
+        font-size: 1.3rem;
+    }
+
+    .work-links {
+        gap: 1.5rem;
+    }
+
+    .contact-line {
+        font-size: 1.2rem;
+    }
+
+    .contact-email {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================
+   Writing Pages (subpages)
+   ============================ */
+
+/* Navigation for writing pages */
 .nav {
     position: fixed;
     top: 0;
@@ -34,7 +538,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--white);
+    background: var(--bg);
     z-index: 100;
     transition: opacity 0.4s ease;
 }
@@ -45,14 +549,15 @@ body {
 }
 
 .nav a {
-    font-size: 1rem;
-    color: var(--black);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-dim);
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: color 0.2s;
 }
 
 .nav a:hover {
-    opacity: 0.4;
+    color: var(--text);
 }
 
 .nav.nav-idle {
@@ -66,76 +571,19 @@ body {
 }
 
 .nav-home {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 4px;
-    transition: opacity 0.2s;
-}
-
-.nav-home span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background-color: #1a1a1a;
-    border-radius: 1px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
 .nav-home:hover {
-    opacity: 0.4;
+    color: var(--text);
 }
 
-/* Hero */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 3rem;
-    max-width: 600px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-.hero p {
-    font-size: 1.4rem;
-    color: var(--gray);
-    margin-bottom: 2rem;
-}
-
-/* Detail 1: Elegant underline animation */
-.email {
-    font-size: 1.1rem;
-    color: var(--black);
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
-
-.email::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--black);
-    transform: scaleX(1);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.email:hover::after {
-    transform: scaleX(0);
-    transform-origin: right;
-}
-
-/* Page Layout */
+/* Page layout */
 .page {
     min-height: 100vh;
     padding: 8rem 3rem 4rem;
@@ -143,62 +591,86 @@ body {
 }
 
 .page h1 {
+    font-family: var(--font-serif);
     font-size: 2.5rem;
     font-weight: 400;
     margin-bottom: 3rem;
     letter-spacing: -0.02em;
+    color: var(--text);
 }
 
 .page p {
-    color: var(--gray);
+    color: var(--text-dim);
     margin-bottom: 1.5rem;
 }
 
 .page h2 {
+    font-family: var(--font-serif);
     font-size: 1.3rem;
     font-weight: 500;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: var(--black);
+    color: var(--text);
 }
 
 .page h2:first-of-type {
     margin-top: 0;
 }
 
-/* Writing Page */
+/* Category headers */
 .writing-header {
+    font-family: var(--font-sans);
     font-size: 1rem;
-    color: var(--gray);
+    color: var(--text-dim);
     margin-bottom: 3rem;
     font-weight: 400;
 }
 
+.category-header {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.category-description {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+/* Category list */
 .category-list {
     list-style: none;
 }
 
 .category-list li {
-    border-top: 1px solid var(--light-gray);
+    border-top: 1px solid var(--card-border);
 }
 
 .category-list li:last-child {
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .category-link {
+    font-family: var(--font-serif);
     font-size: 1.3rem;
-    color: var(--black);
+    color: var(--text);
     text-decoration: none;
     display: block;
     padding: 1.25rem 0;
     padding-left: 1.5rem;
     position: relative;
-    transition: opacity 0.2s;
+    transition: color 0.2s;
 }
 
 .category-link::before {
-    content: '→';
+    content: '\2192';
     position: absolute;
     left: 0;
     opacity: 0;
@@ -211,27 +683,7 @@ body {
     transform: translateX(0);
 }
 
-.category-link:hover {
-    opacity: 1;
-}
-
-/* Category Page */
-.category-header {
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-}
-
-.category-description {
-    font-size: 1.1rem;
-    color: var(--gray);
-    margin-bottom: 2.5rem;
-    font-style: italic;
-}
-
+/* Numbered list */
 .numbered-list {
     list-style: none;
 }
@@ -240,30 +692,32 @@ body {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .numbered-list li:first-child {
-    border-top: 1px solid var(--light-gray);
+    border-top: 1px solid var(--card-border);
 }
 
 .item-number {
+    font-family: var(--font-sans);
     font-size: 0.9rem;
-    color: var(--gray);
+    color: var(--text-faint);
     min-width: 24px;
 }
 
 .item-link {
+    font-family: var(--font-serif);
     font-size: 1.1rem;
-    color: var(--black);
+    color: var(--text);
     text-decoration: none;
     position: relative;
     padding-left: 1.25rem;
-    transition: opacity 0.2s;
+    transition: color 0.2s;
 }
 
 .item-link::before {
-    content: '→';
+    content: '\2192';
     position: absolute;
     left: 0;
     opacity: 0;
@@ -276,41 +730,38 @@ body {
     transform: translateX(0);
 }
 
-.item-link:hover {
-    opacity: 1;
-}
-
 .item-link.draft {
-    color: var(--gray);
+    color: var(--text-faint);
 }
 
-/* Bullet List */
+/* Bullet list */
 .bullet-list {
     list-style: none;
 }
 
 .bullet-list li {
+    font-family: var(--font-serif);
     font-size: 1.15rem;
     line-height: 1.7;
-    color: var(--black);
+    color: var(--text);
     padding: 1rem 0;
     padding-left: 1.5rem;
     position: relative;
-    border-bottom: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .bullet-list li:first-child {
-    border-top: 1px solid var(--light-gray);
+    border-top: 1px solid var(--card-border);
 }
 
 .bullet-list li::before {
-    content: '—';
+    content: '\2014';
     position: absolute;
     left: 0;
-    color: var(--gray);
+    color: var(--text-faint);
 }
 
-/* Essay Page */
+/* Essay page */
 .essay {
     min-height: 100vh;
     padding: 8rem 3rem 4rem;
@@ -318,78 +769,107 @@ body {
 }
 
 .essay h1 {
+    font-family: var(--font-serif);
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 0.25rem;
+    color: var(--text);
 }
 
 .essay-date {
+    font-family: var(--font-sans);
     font-size: 0.9rem;
-    color: var(--gray);
+    color: var(--text-faint);
     margin-bottom: 3rem;
     display: block;
 }
 
 .essay p {
+    font-family: var(--font-serif);
     margin-bottom: 1.5rem;
-    color: var(--black);
+    color: var(--text-dim);
 }
 
-/* Detail 2: Drop cap */
 .essay p:first-of-type::first-letter {
     font-size: 3.2rem;
     float: left;
     line-height: 1;
     margin-right: 0.5rem;
     margin-top: 0.1rem;
+    color: var(--text);
 }
 
 /* Back link */
 .back {
     display: inline-block;
+    font-family: var(--font-sans);
     font-size: 0.9rem;
-    color: var(--gray);
+    color: var(--text-faint);
     text-decoration: none;
     margin-bottom: 2rem;
-    transition: opacity 0.2s;
+    transition: color 0.2s;
 }
 
 .back:hover {
-    opacity: 0.4;
+    color: var(--text-dim);
 }
 
 .back::before {
-    content: '← ';
+    content: '\2190 ';
 }
 
-/* Selection */
-::selection {
-    background: var(--black);
-    color: var(--white);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
+/* ============================
+   Responsive — Small
+   ============================ */
+@media (max-width: 480px) {
     html {
-        font-size: 16px;
+        font-size: 15px;
     }
-    
+
+    :root {
+        --section-pad: 3rem 1.25rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.9rem;
+    }
+
+    .section-journey .section-inner {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .think-card {
+        padding: 1.5rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-marker {
+        left: -1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-arrow {
+        right: 1.5rem;
+    }
+
     .nav {
         padding: 1.5rem;
     }
-    
+
     .nav-links {
         gap: 1.5rem;
     }
-    
-    .hero,
+
     .page,
     .essay {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.4rem;
     }
 }

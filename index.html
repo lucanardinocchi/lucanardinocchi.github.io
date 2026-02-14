@@ -4,74 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Nardinocchi</title>
-    <meta name="description" content="Personal website of Luca Nardinocchi">
-    
+    <meta name="description" content="Luca Nardinocchi — builder, engineer, philosopher. From Adelaide to Sydney with $20K and a dream.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-    
+
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lucanardinocchi.github.io/">
     <meta property="og:title" content="Luca Nardinocchi">
-    <meta property="og:description" content="Personal website of Luca Nardinocchi">
+    <meta property="og:description" content="Builder, engineer, philosopher. From Adelaide to Sydney with $20K and a dream.">
     <meta property="og:image" content="https://lucanardinocchi.github.io/og-image.png">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luca Nardinocchi">
-    <meta name="twitter:description" content="Personal website of Luca Nardinocchi">
+    <meta name="twitter:description" content="Builder, engineer, philosopher. From Adelaide to Sydney with $20K and a dream.">
     <meta name="twitter:image" content="https://lucanardinocchi.github.io/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-links">
-            <a href="about.html">About</a>
-            <a href="writing.html">Writing</a>
-            <a href="https://substack.com/@yoursubstack" target="_blank" rel="noopener">Substack</a>
-        </div>
-        <a href="index.html" class="nav-home" aria-label="Home">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-    </nav>
 
-    <main class="hero">
-        <h1><span id="greeting">Ciao</span>! Luca here.</h1>
-        <p>If you need a hand, I'm just one email away.</p>
-        <a href="mailto:lucanardinocchi@gmail.com" class="email">lucanardinocchi@gmail.com</a>
-    </main>
+    <!-- Background animation layer — wire up Nano Banana Pro here -->
+    <div id="bg-animation"></div>
+
+    <!-- ============================== -->
+    <!-- Section 1: Hero — The Departure -->
+    <!-- ============================== -->
+    <section class="section section-hero" id="hero">
+        <div class="hero-content">
+            <h1 class="reveal">At 18, I left Adelaide with twenty thousand dollars and a dream.</h1>
+            <div class="scroll-indicator reveal reveal-delay-1">
+                <span class="scroll-arrow"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 2: The Journey -->
+    <!-- ============================== -->
+    <section class="section section-journey" id="journey">
+        <div class="section-inner">
+            <p class="narrative-line reveal">No job. No contacts. Just a flight to Sydney and a spot at the best university in Australia.</p>
+            <p class="narrative-line reveal reveal-delay-1">I've been figuring it out ever since.</p>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 3: How I Think -->
+    <!-- ============================== -->
+    <section class="section section-think" id="think">
+        <div class="section-inner">
+            <h2 class="section-label reveal">How I Think</h2>
+            <div class="think-grid">
+                <div class="think-card reveal">
+                    <h3>Aerospace Engineering</h3>
+                    <p>I love the hardest technical problems. The ones that demand precision, rigour, and the willingness to be wrong until you're right. Complexity is where the interesting work lives.</p>
+                </div>
+                <div class="think-card reveal reveal-delay-1">
+                    <h3>Philosophy</h3>
+                    <p>Essentially the art of thinking. It teaches you to interrogate assumptions, structure arguments, and see problems from angles nobody else is looking at. It sharpens everything else.</p>
+                </div>
+            </div>
+            <p class="think-footnote reveal reveal-delay-2">University of Sydney — studying both.</p>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 4: What I Ship -->
+    <!-- ============================== -->
+    <section class="section section-ship" id="ship">
+        <div class="section-inner">
+            <h2 class="section-label reveal">What I Ship</h2>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <p class="timeline-role">Estimator</p>
+                        <p class="timeline-detail">Joined an Adelaide-based construction company. Learned the industry from the ground up.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal reveal-delay-1">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <p class="timeline-role">Self-led AI initiative</p>
+                        <p class="timeline-detail">Saw an opportunity nobody else was pursuing. Championed Claude CoWork adoption company-wide — entirely my own initiative.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal reveal-delay-2">
+                    <span class="timeline-marker"></span>
+                    <div class="timeline-content">
+                        <p class="timeline-role">Internal AI tools</p>
+                        <p class="timeline-detail">Built tools from scratch that changed how the team worked. Shipped fast, iterated faster.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal reveal-delay-3">
+                    <span class="timeline-marker timeline-marker-current"></span>
+                    <div class="timeline-content">
+                        <p class="timeline-role">Head of AI</p>
+                        <p class="timeline-detail">Promoted in six months. Remote. Because the work spoke for itself.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ship-aside reveal">
+                <p>On the FASTR robotics team at USYD, I saw firsthand how messy robot data gets — even at small scale. Gigabytes of sensor logs with no good way to search, organise, or make sense of any of it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 5: What I Want -->
+    <!-- ============================== -->
+    <section class="section section-want" id="want">
+        <div class="section-inner">
+            <h2 class="section-label reveal">What I Want</h2>
+            <div class="conviction-block">
+                <p class="conviction-line reveal">Robotics is still early. The hardest problems aren't just in hardware — they're in making sense of the data.</p>
+                <p class="conviction-line reveal reveal-delay-1">I want to be early-stage, building something that matters, with people who refuse to lose.</p>
+                <p class="conviction-line conviction-line-strong reveal reveal-delay-2">I'll do whatever the team needs. I want to win.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 6: Work -->
+    <!-- ============================== -->
+    <section class="section section-work" id="work">
+        <div class="section-inner">
+            <h2 class="section-label reveal">Work</h2>
+            <div class="project-grid">
+                <a href="#" class="project-card reveal" target="_blank" rel="noopener">
+                    <p class="project-title">Project One</p>
+                    <p class="project-desc">Brief description of what you built and why it matters.</p>
+                    <span class="project-arrow">&rarr;</span>
+                </a>
+                <a href="#" class="project-card reveal reveal-delay-1" target="_blank" rel="noopener">
+                    <p class="project-title">Project Two</p>
+                    <p class="project-desc">Brief description of what you built and why it matters.</p>
+                    <span class="project-arrow">&rarr;</span>
+                </a>
+                <a href="#" class="project-card reveal reveal-delay-2" target="_blank" rel="noopener">
+                    <p class="project-title">Project Three</p>
+                    <p class="project-desc">Brief description of what you built and why it matters.</p>
+                    <span class="project-arrow">&rarr;</span>
+                </a>
+            </div>
+
+            <div class="work-links reveal">
+                <a href="#" class="work-link" target="_blank" rel="noopener">Resume / CV</a>
+                <a href="#" class="work-link" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="writing/essays.html" class="work-link">Writing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- Section 7: Contact -->
+    <!-- ============================== -->
+    <section class="section section-contact" id="contact">
+        <div class="section-inner">
+            <p class="contact-line reveal">If you're building something that matters, I'd like to hear about it.</p>
+            <a href="mailto:lucanardinocchi@gmail.com" class="contact-email reveal reveal-delay-1">lucanardinocchi@gmail.com</a>
+        </div>
+    </section>
 
     <script>
-        // Time-aware greeting
-        const hour = new Date().getHours();
-        const greeting = document.getElementById('greeting');
-        
-        if (hour >= 5 && hour < 12) {
-            greeting.textContent = 'Buongiorno';
-        } else if (hour >= 12 && hour < 18) {
-            greeting.textContent = 'Buon pomeriggio';
-        } else if (hour >= 18 && hour < 23) {
-            greeting.textContent = 'Buonasera';
-        }
+        // ============================
+        // Scroll-reveal via Intersection Observer
+        // ============================
+        (function() {
+            const revealElements = document.querySelectorAll('.reveal');
 
-        // Nav fades when idle
-        let idleTimer;
-        const nav = document.querySelector('.nav');
-        
-        function resetIdle() {
-            nav.classList.remove('nav-idle');
-            clearTimeout(idleTimer);
-            idleTimer = setTimeout(() => nav.classList.add('nav-idle'), 3000);
-        }
-        
-        document.addEventListener('mousemove', resetIdle);
-        document.addEventListener('scroll', resetIdle);
-        resetIdle();
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -60px 0px'
+            });
+
+            revealElements.forEach(function(el) {
+                observer.observe(el);
+            });
+        })();
+
+        // ============================
+        // Smooth scroll for anchor links
+        // ============================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -177,9 +177,9 @@ a {
 }
 
 .think-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .think-card {
@@ -497,10 +497,6 @@ a {
 
     .narrative-line + .narrative-line {
         font-size: 1.25rem;
-    }
-
-    .think-grid {
-        grid-template-columns: 1fr;
     }
 
     .conviction-line {

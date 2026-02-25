@@ -476,6 +476,18 @@ a {
     transition: background 0.15s;
 }
 
+.contact-email-secondary {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.contact-email-secondary::after {
+    background: var(--faint);
+}
+
 .contact-email:hover {
     color: var(--foreground);
 }

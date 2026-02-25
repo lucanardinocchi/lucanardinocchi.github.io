@@ -5,183 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Nardinocchi</title>
     <meta name="description" content="Aerospace engineering and philosophy student building at the intersection of AI, defense, and construction.">
-
     <link rel="icon" type="image/png" href="favicon.png">
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lucanardinocchi.github.io/">
     <meta property="og:title" content="Luca Nardinocchi">
     <meta property="og:description" content="Aerospace engineering and philosophy student building at the intersection of AI, defense, and construction.">
     <meta property="og:image" content="https://lucanardinocchi.github.io/og-image.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luca Nardinocchi">
-    <meta name="twitter:description" content="Aerospace engineering and philosophy student building at the intersection of AI, defense, and construction.">
-    <meta name="twitter:image" content="https://lucanardinocchi.github.io/og-image.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div id="bg-animation"></div>
-
-    <!-- 1: Hero -->
-    <section class="section section-hero" id="hero">
-        <div class="hero-content">
-            <h1 class="reveal">At 18, I left Adelaide with twenty thousand dollars and a dream.</h1>
-            <div class="scroll-indicator reveal reveal-delay-1">
-                <span class="scroll-arrow"></span>
-            </div>
+    <nav class="site-nav">
+        <a href="index.html" class="nav-name">Luca Nardinocchi</a>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- 2: The Journey -->
-    <section class="section section-journey" id="journey">
-        <div class="section-inner">
-            <p class="narrative-line reveal">No job. No contacts. No college. A $200-a-week stipend and a spot at the best university in Australia.</p>
-            <p class="narrative-line reveal reveal-delay-1">I built financial stability from nothing, managed every part of my life myself, and figured out the rest as I went. I've been doing that ever since.</p>
+    <main class="page-home">
+        <p class="home-bio">Aerospace engineering and philosophy student at the University of Sydney. Head of AI at CENTINA. Founder of PromptAI Consulting. Interested in autonomy, robotics, defense technology, and hard problems.</p>
+
+        <div class="home-links">
+            <a href="about.html">About me</a>
+            <a href="projects.html">What I've built</a>
+            <a href="contact.html">Get in touch</a>
         </div>
-    </section>
-
-    <!-- 3: How I Think -->
-    <section class="section section-think" id="think">
-        <div class="section-inner">
-            <h2 class="section-label reveal">How I Think</h2>
-            <div class="think-grid">
-                <div class="think-card reveal">
-                    <h3>Aerospace Engineering</h3>
-                    <p>Dynamics, control systems, computational methods, structures, aerodynamics. The technical foundation for modelling complex physical systems under real constraints. This is where the rigour comes from.</p>
-                </div>
-                <div class="think-card reveal reveal-delay-1">
-                    <h3>Philosophy</h3>
-                    <p>How to reason clearly under uncertainty. How to evaluate competing frameworks. How to ask the right questions when the problem isn't well-defined. It shows up as clearer system design, better problem decomposition, and the ability to ask "why" before jumping to "how."</p>
-                </div>
-            </div>
-            <p class="think-footnote reveal reveal-delay-2">Double degree, University of Sydney.</p>
-        </div>
-    </section>
-
-    <!-- 4: What I Ship -->
-    <section class="section section-ship" id="ship">
-        <div class="section-inner">
-            <h2 class="section-label reveal">What I've Built</h2>
-
-            <div class="ship-subsection reveal">
-                <h3 class="ship-subtitle">AI at CENTINA</h3>
-                <p class="ship-text">When I started using AI tools for my estimating work at CENTINA, a $70M construction company in South Australia, the productivity gains were immediate. I wasn't just saving time on individual tasks — I was changing how work got done. That caught attention, and I was promoted to Head of AI.</p>
-                <p class="ship-text">I wrote the board paper proposing a $76,600 investment in company-wide AI adoption. I built detailed SOPs for every role — site supervisors, commercial engineers, contract administrators, estimators. I developed internal tools including pipeline forecasting systems, project health dashboards, and subcontractor recommendation engines. The work wasn't theoretical. It was about taking real construction workflows and making them dramatically faster without sacrificing quality.</p>
-                <div class="stats-row">
-                    <div class="stat">
-                        <span class="stat-value">24</span>
-                        <span class="stat-label">Office staff trained</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">$76,600</span>
-                        <span class="stat-label">Board-approved AI investment</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">6 months</span>
-                        <span class="stat-label">Estimator to Head of AI</span>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="section-divider reveal">
-
-            <div class="ship-subsection reveal">
-                <h3 class="ship-subtitle">PromptAI Consulting</h3>
-                <p class="ship-text">The experience at CENTINA became the foundation for PromptAI, my AI implementation service for construction companies and SME builders. Most construction companies know they should be using AI, but adoption doesn't stick without structured implementation, hands-on training, and ongoing accountability.</p>
-                <p class="ship-text">PromptAI delivers three things: an AI readiness audit that identifies where AI will actually move the needle, a hands-on implementation program with role-specific training on real work, and a monthly retainer that keeps teams current as the tools evolve. I've built out the platform and have a design partner live.</p>
-                <div class="stats-row">
-                    <div class="stat">
-                        <span class="stat-value">50–400%</span>
-                        <span class="stat-label">Productivity improvements</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">1</span>
-                        <span class="stat-label">Design partner live</span>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="section-divider reveal">
-
-            <div class="ship-subsection reveal">
-                <h3 class="ship-subtitle">Tools and Systems</h3>
-                <p class="ship-text">Cost planning systems for residential and commercial projects. Measurement SOPs. Excel-based tracking and forecasting systems. Process documentation for construction workflows. Pipeline forecasting, project health dashboards, subcontractor recommendation engines.</p>
-                <p class="ship-text">I also built a personal management system that runs my calendar autonomously, and a personal CRM to make sure I maintain all my relationships. Functional systems that I actually use, every day.</p>
-            </div>
-
-            <div class="ship-aside reveal">
-                <p>On the FASTR robotics team at USYD, I saw firsthand how messy robot data gets — even at small scale. Gigabytes of sensor logs with no good way to search, organise, or make sense of any of it.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5: Where I'm Heading -->
-    <section class="section section-want" id="want">
-        <div class="section-inner">
-            <h2 class="section-label reveal">Where I'm Heading</h2>
-            <div class="conviction-block">
-                <p class="conviction-line reveal">I want to have fun and win in frontier tech — robotics, AI, autonomous systems, defense.</p>
-                <p class="conviction-line reveal reveal-delay-1">I'm deeply AI-native. I don't use AI as a tool bolted onto my workflow — it is my workflow. That's how I went from estimator to Head of AI in six months. That's how I built PromptAI. That's how I think about every problem now.</p>
-                <p class="conviction-line reveal reveal-delay-2">The problems I'm most drawn to are the ones where the engineering is hard, the stakes are real, and the team has to be excellent because there's no room for mediocrity.</p>
-                <p class="conviction-line conviction-line-strong reveal reveal-delay-3">I work really hard. I want to be where the technical work is demanding, the people are fun and driven, and we're building something that matters.</p>
-            </div>
-            <div class="interest-tags reveal reveal-delay-3">
-                <span class="interest-tag">Autonomous systems</span>
-                <span class="interest-tag">Robotics</span>
-                <span class="interest-tag">Applied AI</span>
-                <span class="interest-tag">Defense technology</span>
-                <span class="interest-tag">Maritime autonomy</span>
-                <span class="interest-tag">Computer vision</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6: Life -->
-    <section class="section section-life" id="life">
-        <div class="section-inner">
-            <h2 class="section-label reveal">Beyond Work</h2>
-            <p class="life-text reveal">I grew up watching Friday and every African-American comedy I could get my hands on. I don't take myself too seriously — I take the work seriously.</p>
-            <p class="life-text reveal reveal-delay-1">I hike, go to the beach, boulder and run almost every day, box, play futsal, and get out spearfishing and sailing when I can. Staying physical keeps the rest of it sharp.</p>
-            <p class="life-text reveal reveal-delay-2">I volunteer at Double Bay Library doing tech support and tutor low-income students at Weave in Woolloomooloo. I'm also building a robotics community in Sydney — organising meets, projects, and workshops for people who want to build real systems, not just talk about them.</p>
-        </div>
-    </section>
-
-    <!-- 8: Contact -->
-    <section class="section section-contact" id="contact">
-        <div class="section-inner">
-            <p class="contact-line reveal">If you're building something that matters, I'd like to hear about it.</p>
-            <a href="mailto:lucanardinocchi@gmail.com" class="contact-email reveal reveal-delay-1">lucanardinocchi@gmail.com</a>
-            <a href="mailto:lnar5347@uni.sydney.edu.au" class="contact-email contact-email-secondary reveal reveal-delay-2">lnar5347@uni.sydney.edu.au</a>
-        </div>
-    </section>
-
-    <script>
-        (function() {
-            var els = document.querySelectorAll('.reveal');
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-            els.forEach(function(el) { observer.observe(el); });
-        })();
-
-        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-            a.addEventListener('click', function(e) {
-                e.preventDefault();
-                var t = document.querySelector(this.getAttribute('href'));
-                if (t) t.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+    </main>
 </body>
 </html>

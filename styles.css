@@ -268,6 +268,34 @@ a {
 }
 
 /* ============================
+   Tool List
+   ============================ */
+.tool-list {
+    margin-top: 1rem;
+}
+
+.tool-item {
+    padding: 0.5rem 0;
+}
+
+.tool-item + .tool-item {
+    border-top: 1px solid var(--border);
+}
+
+.tool-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: 0.15rem;
+}
+
+.tool-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ============================
    Contact
    ============================ */
 .contact-list {
